@@ -47,6 +47,3 @@ class FlaskBoggleTestCase(unittest.TestCase):
         self.assertEqual(response.json['times_played'], 0)
         self.assertEqual(response.json['highscore'], 0)
 
-
-if __name__ == '__main__':
-    unittest.main()
