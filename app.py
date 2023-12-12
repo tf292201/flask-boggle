@@ -7,7 +7,6 @@ from boggle import Boggle
 boggle_game = Boggle()
 
 app = Flask(__name__)
-app.debug = True
 app.secret_key = "SECRET_KEY"
 
 toolbar = DebugToolbarExtension(app)
@@ -36,7 +35,6 @@ def post_score():
 
 @app.route('/get-score')
 def get_score():
-  highscore = session.get('highscore', 0)
-  times_played = session.get('times_played', 0)
-  return jsonify(times_played=times_played, highscore=highscore)
+  return jsonify(times_played=session['times_played'], highscore=session['highscore'])
+  
 app.run()
